@@ -6,10 +6,8 @@ import QtQuick.Dialogs 1.2
 ApplicationWindow {
     id: application
     visible: true
-    width: 700
-    height: 800
-    minimumHeight: maximumHeight
-    minimumWidth: maximumWidth
+    width: 740
+    height: 700
     title: qsTr("Jeu Araignée")
 
 
@@ -36,9 +34,9 @@ ApplicationWindow {
                 {/*Jeu.increment();*/
                 Jeu.changement(0);
                 if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                    {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}       // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}       // afficher un message dans un nouvelle fenetre
                 if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                    {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre
 
         }
         mouseArea01{
@@ -46,9 +44,9 @@ ApplicationWindow {
                 {/*Jeu.increment();*/
                 Jeu.changement(1);
                 if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                    {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
                 if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                    {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre
                 }
 
         mouseArea02{
@@ -56,9 +54,9 @@ ApplicationWindow {
                 {/*Jeu.increment();*/
                 Jeu.changement(2);
         if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-            {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+            {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
         if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-            {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre
+            {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre
 }
 
 
@@ -67,68 +65,68 @@ ApplicationWindow {
                 {/*Jeu.increment();*/
                 Jeu.changement(3);
                 if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                    {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
                 if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                    {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre
         }
         mouseArea11{
             onClicked:
                 {/*Jeu.increment();*/
                 Jeu.changement(4);
                 if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                    {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
                 if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                    {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre
         }
         mouseArea12{
             onClicked:
                 {/*Jeu.increment();*/
                 Jeu.changement(5);
                 if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                    {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
                 if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                    {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre}
+                    {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre}
         }
         mouseArea20{
             onClicked:
                 {/*Jeu.increment();*/
                 Jeu.changement(6);
                 if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                    {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
                 if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                    {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre}
+                    {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre}
         }
         mouseArea21{
             onClicked:
                 {/*Jeu.increment();*/
                 Jeu.changement(7);
                 if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                    {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+                    {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
                 if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                    {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre}
+                    {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre}
         }
         mouseArea22{
             onClicked:
                 {//Jeu.increment();
                 Jeu.changement(8);
             if(Jeu.get_victoire()==1)  // si victoire du joueur 1
-                {messageDialog.show(qsTr("Victoire du joueur 1, bravo !!"));}  // afficher un message dans un nouvelle fenetre
+                {messageDialog.show(qsTr("Joueur 1, vous avez gagné"));}  // afficher un message dans un nouvelle fenetre
             if(Jeu.get_victoire()==2)  // si victoire du joueur 2
-                {messageDialog.show(qsTr("Victoire du joueur 2, bravo !!"));}} // afficher un message dans un nouvelle fenetre
+                {messageDialog.show(qsTr("Joueur 2, vous avez gagné"));}} // afficher un message dans un nouvelle fenetre
     }
 }
 
-    // message à afficher lors d'une victoire
+    // message à afficher quand victoire
     MessageDialog {
         id: messageDialog
-        title: qsTr("Partie terminée")
+        title: qsTr("Fin de la partie !")
 
         standardButtons: StandardButton.No | StandardButton.Yes
             onYes: Jeu.nouvelle_partie()
             onNo: Qt.quit()
 
         function show(caption) {
-            messageDialog.text = caption+" Voulez-vous rejouez ?";
+            messageDialog.text = caption+" ! Voulez-vous rejouez ?";
             messageDialog.open();
         }
     }

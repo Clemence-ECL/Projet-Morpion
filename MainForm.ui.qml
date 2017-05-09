@@ -5,8 +5,9 @@ import QtQuick.Layouts 1.2
 
 Rectangle {
     id: rectangle  // rectangle de fond
+
     width: 700
-    height: 800
+    height: 700
     color: "#00000000"   // couleur de fond
     radius: 3
     property alias image18: image18
@@ -56,11 +57,12 @@ Rectangle {
         id: rectangle00
         width: 194
         height: 194
+        color: "#00000000"
         anchors.left: parent.left
         anchors.leftMargin: 46
         anchors.top: parent.top
         anchors.topMargin: 46
-        border.color: "#000000"
+        border.color: "#00000000"
 
         MouseArea {
             id: mouseArea00
@@ -87,7 +89,7 @@ Rectangle {
                 visible : Jeu.display[9]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
         }
     }
@@ -96,25 +98,26 @@ Rectangle {
         id: rectangle10
         y: 100
         width: 196
-        height: 204
-        anchors.verticalCenterOffset: -25
+        height: 194
+        color: "#00000000"
         anchors.left: parent.left
-        anchors.leftMargin: 44
+        anchors.leftMargin: 38
+        anchors.verticalCenterOffset: 0
         anchors.verticalCenter: parent.verticalCenter
-        border.color: "#000000"
+        border.color: "#00000000"
 
         MouseArea {
             id: mouseArea10
             anchors.leftMargin: 0
-            anchors.topMargin: 8
+            anchors.topMargin: 0
             anchors.rightMargin: 0
-            anchors.bottomMargin: 0
+            anchors.bottomMargin: 8
             anchors.fill: parent
 
             Image {
                 id: image5
-                x: 8
-                y: 8
+                x: 16
+                y: 9
                 visible : Jeu.display[3]
                 width: 175
                 height: 176
@@ -123,12 +126,12 @@ Rectangle {
 
             Image {
                 id: image6
-                x: 8
-                y: 8
+                x: 10
+                y: 3
                 visible : Jeu.display[12]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
         }
     }
@@ -136,12 +139,12 @@ Rectangle {
 
     Rectangle {
         id: rectangle01
-        x: 7
         y: 4
         width: 200
         height: 196
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter
+        color: "#00000000"
+        anchors.left: parent.left
+        anchors.leftMargin: 250
         MouseArea {
             id: mouseArea01
             anchors.rightMargin: -8
@@ -167,39 +170,40 @@ Rectangle {
                 visible : Jeu.display[10]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
         }
         anchors.topMargin: 46
         anchors.top: parent.top
-        border.color: "#000000"
+        border.color: "#00000000"
     }
     Rectangle {
         id: rectangle11
-        x: 99  // position
-        y: 64
+        // position
         width: 200 // taille
         height: 204
-        anchors.verticalCenterOffset: -25
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter  // centrer sur le cadre rectangle d'avant
-        anchors.verticalCenter: parent.verticalCenter
-        border.color: "#000000"
+        color: "#00000000"
+        anchors.left: parent.left
+        anchors.leftMargin: 250
+        anchors.top: parent.top
+        anchors.topMargin: 248
+        // centrer sur le cadre rectangle d'avant
+        border.color: "#00000000"
 
         MouseArea {
             id: mouseArea11
             x: -30
             y: 75
-            anchors.leftMargin: 6
-            anchors.topMargin: 5
-            anchors.rightMargin: -6
-            anchors.bottomMargin: 3
+            anchors.leftMargin: 0
+            anchors.topMargin: 8
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
             anchors.fill: parent
 
             Image {
                 id: image7
-                x: 12
-                y: 10
+                x: 16
+                y: 9
                 visible : Jeu.display[4]
                 width: 175
                 height: 176
@@ -208,12 +212,12 @@ Rectangle {
 
             Image {
                 id: image8
-                x: 16
-                y: 12
+                x: 18
+                y: 11
                 visible : Jeu.display[13]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
         }
     }
@@ -224,6 +228,7 @@ Rectangle {
         y: 0
         width: 194
         height: 194
+        color: "#00000000"
         anchors.topMargin: 46
         MouseArea {
             id: mouseArea02
@@ -246,13 +251,13 @@ Rectangle {
                 visible : Jeu.display[11]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
             anchors.rightMargin: 6
             anchors.leftMargin: -6
             anchors.fill: parent
         }
-        border.color: "#000000"
+        border.color: "#00000000"
         anchors.top: parent.top
         anchors.leftMargin: 464
         anchors.left: parent.left
@@ -264,6 +269,7 @@ Rectangle {
         y: 5
         width: 194
         height: 194
+        color: "#00000000"
         anchors.topMargin: 466
         MouseArea {
             id: mouseArea20
@@ -286,13 +292,13 @@ Rectangle {
                 visible : Jeu.display[15]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
             anchors.rightMargin: 6
             anchors.leftMargin: -6
             anchors.fill: parent
         }
-        border.color: "#000000"
+        border.color: "#00000000"
         anchors.top: parent.top
         anchors.leftMargin: 46
         anchors.left: parent.left
@@ -304,7 +310,8 @@ Rectangle {
         y: -9
         width: 194
         height: 194
-        anchors.topMargin: 466
+        color: "#00000000"
+        anchors.topMargin: 458
         MouseArea {
             id: mouseArea21
             anchors.bottomMargin: 0
@@ -326,15 +333,15 @@ Rectangle {
                 visible : Jeu.display[16]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
-            anchors.rightMargin: 3
-            anchors.leftMargin: -3
+            anchors.rightMargin: 6
+            anchors.leftMargin: -6
             anchors.fill: parent
         }
-        border.color: "#000000"
+        border.color: "#00000000"
         anchors.top: parent.top
-        anchors.leftMargin: 253
+        anchors.leftMargin: 256
         anchors.left: parent.left
     }
 
@@ -344,6 +351,7 @@ Rectangle {
         y: -1
         width: 194
         height: 194
+        color: "#00000000"
         anchors.topMargin: 458
         MouseArea {
             id: mouseArea22
@@ -367,13 +375,13 @@ Rectangle {
                 visible : Jeu.display[17]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
             anchors.rightMargin: 6
             anchors.leftMargin: -6
             anchors.fill: parent
         }
-        border.color: "#000000"
+        border.color: "#00000000"
         anchors.top: parent.top
         anchors.leftMargin: 464
         anchors.left: parent.left
@@ -385,6 +393,7 @@ Rectangle {
         y: 7
         width: 194
         height: 194
+        color: "#00000000"
         anchors.topMargin: 253
         MouseArea {
             id: mouseArea12
@@ -407,13 +416,13 @@ Rectangle {
                 visible : Jeu.display[14]
                 width: 170
                 height: 176
-                source: "pion3.jpg"
+                source: "pion3.png"
             }
             anchors.rightMargin: 6
             anchors.leftMargin: -6
             anchors.fill: parent
         }
-        border.color: "#000000"
+        border.color: "#00000000"
         anchors.top: parent.top
         anchors.leftMargin: 464
         anchors.left: parent.left

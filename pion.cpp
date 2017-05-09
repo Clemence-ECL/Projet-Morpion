@@ -1,7 +1,6 @@
 #include "pion.h"
 #include <iostream>
 
-
 using namespace std;
 
 pion::pion(QObject *parent) : QObject(parent)
@@ -12,27 +11,29 @@ pion::pion(QObject *parent) : QObject(parent)
 
 void pion::Init(bool value){
     for (int i=0;i<18;i++)
-        {visibilite.append(value);}
-    joueur=0; /*personne n'a encore joué*/
+        {D.append(value);}
+    C=0;/*
+    CasePrecedente.push_back(-1);
+    CasePrecedente.push_back(-1);*/
 }
 
-QList<bool> pion::checkEtat()
+QList<bool> pion::checkPosition()
 {
-    return visibilite;
+    return D;
 }
 
 void pion::changement(int j) {
     //on bloque le jeu si il y a une victoire
     if(victoire == 0) {
         // Si on n'a pas encore placé tous les pions
-        if(joueur<6){
-            if(visibilite[j]==false && visibilite[j+9]==false){         // si la case est noire (pas déjà occupée) (on regarde si elle n'est occupée par aucun joueur)
+        if(C<6){
+            if(D[j]==false && D[j+9]==false){         // si la case est noire (pas déjà occupée) (on regarde si elle n'est occupée par aucun joueur)
                 // On fait apparaître le pion correspondant au joueur
-                if(joueur%2==0)
-                    {visibilite[j]=true;}
-                if(joueur%2==1)
-                    {visibilite[j+9]=true;}
-                joueur++;
+                if(C%2==0)
+                    {D[j]=true;}
+                if(C%2==1)
+                    {D[j+9]=true;}
+                C++;
             }
         }
 
@@ -40,23 +41,23 @@ void pion::changement(int j) {
         else {
             //Si il y a six pions sur le terrain
             if (SixPions == 1) {
-                if(joueur%2==0 && visibilite[j]==true) {
-                    visibilite[j]=false;
+                if(C%2==0 && D[j]==true) {
+                    D[j]=false;
                     SixPions = 0;
                 }
-                if(joueur%2==1 && visibilite[j+9]==true) {
-                    visibilite[j+9]=false;
+                if(C%2==1 && D[j+9]==true) {
+                    D[j+9]=false;
                     SixPions = 0;
                 }
             }
             //Si on a déjà retiré un pion
             else {
-                if(visibilite[j]==false && visibilite[j+9]==false) {
-                    if(joueur%2==0)
-                        {visibilite[j]=true;}
-                    if(joueur%2==1)
-                        {visibilite[j+9]=true;}
-                    joueur++;
+                if(D[j]==false && D[j+9]==false) {
+                    if(C%2==0)
+                        {D[j]=true;}
+                    if(C%2==1)
+                        {D[j+9]=true;}
+                    C++;
                     SixPions = 1;
                 }
             }
@@ -70,9 +71,9 @@ void pion::changement(int j) {
 
 void pion::nouvelle_partie(){   // méthode appelée quand on clique sur le bouton "Nouvelle Partie"
     for(int i=0;i<9;i++)
-        {visibilite[i]=false;
-        visibilite[i+9]=false;}   // remet toutes les cases en noires
-    joueur=0;                    // remet le compteur de tour à 0
+        {D[i]=false;
+        D[i+9]=false;}   // remet toutes les cases en noires
+    C=0;                    // remet le compteur de tour à 0
     victoire=0;             // remet la victoire à 0
     SixPions = 1;
     positionChanged();        // actualise les chgmts dans mainform
@@ -90,45 +91,45 @@ void pion::test_victoire(){              // methode appelée à chaque fois que 
     // change la couleur sur la ligne gagner : en rouge
 
     // joueur 1 gagne
-    if(visibilite[0]==true && visibilite[1]==true && visibilite[2]==true){
+    if(D[0]==true && D[1]==true && D[2]==true){
         victoire=1;}
-    if(visibilite[3]==true && visibilite[4]==true && visibilite[5]==true){
+    if(D[3]==true && D[4]==true && D[5]==true){
         victoire=1;}
-    if(visibilite[6]==true && visibilite[7]==true && visibilite[8]==true){
+    if(D[6]==true && D[7]==true && D[8]==true){
         victoire=1;}
-    if(visibilite[0]==true && visibilite[3]==true && visibilite[6]==true){
+    if(D[0]==true && D[3]==true && D[6]==true){
         victoire=1;}
-    if(visibilite[1]==true && visibilite[4]==true && visibilite[7]==true){
+    if(D[1]==true && D[4]==true && D[7]==true){
         victoire=1;}
-    if(visibilite[2]==true && visibilite[5]==true && visibilite[8]==true){
+    if(D[2]==true && D[5]==true && D[8]==true){
         victoire=1;}
-    if(visibilite[0]==true && visibilite[4]==true && visibilite[8]==true){
+    if(D[0]==true && D[4]==true && D[8]==true){
         victoire=1;}
-    if(visibilite[2]==true && visibilite[4]==true && visibilite[6]==true){
+    if(D[2]==true && D[4]==true && D[6]==true){
         victoire=1;}
 
     // joueur 2 gagne
-    if(visibilite[9]==true && visibilite[10]==true && visibilite[11]==true){
+    if(D[9]==true && D[10]==true && D[11]==true){
             victoire=2;}
-    if(visibilite[12]==true && visibilite[13]==true && visibilite[14]==true){
+    if(D[12]==true && D[13]==true && D[14]==true){
             victoire=2;}
-    if(visibilite[15]==true && visibilite[16]==true && visibilite[17]==true){
+    if(D[15]==true && D[16]==true && D[17]==true){
             victoire=2;}
-    if(visibilite[9]==true && visibilite[12]==true && visibilite[15]==true){
+    if(D[9]==true && D[12]==true && D[15]==true){
             victoire=2;}
-    if(visibilite[10]==true && visibilite[13]==true && visibilite[16]==true){
+    if(D[10]==true && D[13]==true && D[16]==true){
             victoire=2;}
-    if(visibilite[11]==true && visibilite[14]==true && visibilite[17]==true){
+    if(D[11]==true && D[14]==true && D[17]==true){
             victoire=2;}
-    if(visibilite[9]==true && visibilite[13]==true && visibilite[17]==true){
+    if(D[9]==true && D[13]==true && D[17]==true){
             victoire=2;}
-    if(visibilite[11]==true && visibilite[13]==true && visibilite[15]==true){
+    if(D[11]==true && D[13]==true && D[15]==true){
             victoire=2;}
 }
 
 
 bool pion::readCompteur()
 {
-    return joueur%2+1;
+    return C%2+1;
 }
 

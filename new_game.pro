@@ -1,12 +1,10 @@
 TEMPLATE = app
 
 QT += qml quick
-QT+=widgets
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    pion.cpp \
-    compteur.cpp
+    pion.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,8 +31,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    pion.h \
-    compteur.h
+    pion.h
 
 DISTFILES += \
     ../../Projet/images/grille.png

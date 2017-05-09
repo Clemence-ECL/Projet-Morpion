@@ -22,9 +22,9 @@ public:
 
 
 
-    Q_PROPERTY(QList<bool> display READ checkEtat NOTIFY positionChanged);
+    Q_PROPERTY(QList<bool> display READ checkPosition NOTIFY positionChanged);
 
-    QList<bool> checkEtat();
+    QList<bool> checkPosition();
 
     Q_INVOKABLE void changement(int j);
 
@@ -41,10 +41,11 @@ public slots:
 private:
     int fCompteur;
     vector<int> CasePrecedente;
-    QList<bool> visibilite; /*cette liste stocke l'état de visibilité du pion 1 ou 1*/
-    int joueur; /* joueur va nous permettre de savoir qui joue*/
+    QList<bool> D;
+    int C;
     int SixPions = 1;
-    int victoire=0;
+    int victoire=0; //c
+
     QString couleurj1;
     QString couleurj2;
 };

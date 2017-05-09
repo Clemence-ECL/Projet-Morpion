@@ -5,5 +5,6 @@
         <file>grille.png</file>
         <file>pion2.png</file>
         <file>pion3.jpg</file>
+        <file>pion3.png</file>
     </qresource>
 </RCC>
