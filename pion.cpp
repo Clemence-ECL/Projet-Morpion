@@ -27,7 +27,7 @@ void pion::changement(int j) {
     if(victoire == 0) {
         // Si on n'a pas encore placé tous les pions
         if(C<6){
-            if(D[j]==false && D[j+9]==false){         // si la case est noire (pas déjà occupée) (on regarde si elle n'est occupée par aucun joueur)
+            if(D[j]==false && D[j+9]==false){         // si la case est vide (pas déjà occupée) (on regarde si elle n'est occupée par aucun joueur)
                 // On fait apparaître le pion correspondant au joueur
                 if(C%2==0)
                     {D[j]=true;}
@@ -86,9 +86,8 @@ int pion::get_victoire(){  // retourne l'attribu victoire
 }
 
 
-void pion::test_victoire(){              // methode appelée à chaque fois que l'on change une case de couleur :
-    // met l'attribu victoire à 1 si le joueur 1 a gagné, et à 2 si le joueur 2 a gagné
-    // change la couleur sur la ligne gagner : en rouge
+void pion::test_victoire(){              // methode appelée à chaque fois que l'on remplit une case :
+    // met l'attribut victoire à 1 si le joueur 1 a gagné, et à 2 si le joueur 2 a gagné
 
     // joueur 1 gagne
     if(D[0]==true && D[1]==true && D[2]==true){
